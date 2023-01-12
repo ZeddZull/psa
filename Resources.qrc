@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/data_images">
+        <file>image/in (1).png</file>
+        <file>image/place-flying-in-sunset-sky.jpg</file>
+    </qresource>
+</RCC>

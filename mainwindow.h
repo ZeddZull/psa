@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "QMessageBox"
+#include <QThread>
+#include "user.h"
+#include "authoriseduser.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +20,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_ButtonLogin_clicked();
+
 private:
     Ui::MainWindow *ui;
+    User *user;
+    AuthorisedUser authorised_User = AuthorisedUser();
+    int number_of_tries;
 };
+
 #endif // MAINWINDOW_H
