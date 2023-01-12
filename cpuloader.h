@@ -7,10 +7,10 @@ class CPULoader
 {
 public:
     CPULoader();
-    float GetCPULoad();
+    float getCPULoad();
 private:
-    float CalculateCPULoad(unsigned long long, unsigned long long);
-    unsigned long long FileTimeToInt64(const FILETIME&);
+    float calculateCPULoad(unsigned long long, unsigned long long);
+    unsigned long long fileTimeToInt64(const FILETIME&);
 };
 
 #endif // CPULOADER_H

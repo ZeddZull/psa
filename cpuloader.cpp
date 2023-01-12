@@ -3,7 +3,7 @@
 CPULoader::CPULoader()
 {
 }
-float CPULoader::CalculateCPULoad(unsigned long long idleTicks, unsigned long long totalTicks)
+float CPULoader::calculateCPULoad(unsigned long long idleTicks, unsigned long long totalTicks)
 {
     static unsigned long long _previousTotalTicks = 0;
     static unsigned long long _previousIdleTicks = 0;
@@ -18,12 +18,12 @@ float CPULoader::CalculateCPULoad(unsigned long long idleTicks, unsigned long lo
     _previousIdleTicks = idleTicks;
     return ret;
 }
-unsigned long long CPULoader::FileTimeToInt64(const FILETIME & ft)
+unsigned long long CPULoader::fileTimeToInt64(const FILETIME & ft)
 {
     return (((unsigned long long)(ft.dwHighDateTime)) << 32) | ((unsigned long long)ft.dwLowDateTime);
 }
-float CPULoader::GetCPULoad()
+float CPULoader::getCPULoad()
 {
     FILETIME idleTime, kernelTime, userTime;
-    return GetSystemTimes(&idleTime, &kernelTime, &userTime) ? CalculateCPULoad(FileTimeToInt64(idleTime), FileTimeToInt64(kernelTime) + FileTimeToInt64(userTime)) : -1.0f;
+    return (GetSystemTimes(&idleTime, &kernelTime, &userTime) ? calculateCPULoad(fileTimeToInt64(idleTime), fileTimeToInt64(kernelTime) + fileTimeToInt64(userTime)) : -1.0f)*100;
 }

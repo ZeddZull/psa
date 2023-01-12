@@ -7,7 +7,7 @@ class RAMLoader
 {
 public:
     RAMLoader();
-    int getPourcentageUse();
+    int getRAMLoad();
 private:
     MEMORYSTATUSEX memInfo;
 };

@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets charts
 
 CONFIG += c++17
 
@@ -10,16 +10,19 @@ CONFIG += c++17
 
 SOURCES += \
     cpuloader.cpp \
+    loadchart.cpp \
     main.cpp \
     mainwindow.cpp \
     ramloader.cpp
 
 HEADERS += \
     cpuloader.h \
+    loadchart.h \
     mainwindow.h \
     ramloader.h
 
 FORMS += \
+    loadchart.ui \
     mainwindow.ui
 
 # Default rules for deployment.
