@@ -13,20 +13,22 @@ LoadChart::LoadChart(QWidget *parent) :
     cpt = 0;
     cpuload->append(0,cpuloader->getCPULoad());
     ramload->append(0,ramloader->getRAMLoad());
-    chart = new QChart();
     cpuload->setName("CPU");
     ramload->setName("RAM");
+
+    chart = new QChart();
     chart->addSeries(cpuload);
     chart->addSeries(ramload);
 
-    QValueAxis* axisY = new QValueAxis;
+    axisY = new QValueAxis;
     axisY->setTitleText("RAM / CPU % use");
     axisY->setMax(100);
     axisY->setMin(0);
     chart->addAxis(axisY, Qt::AlignLeft);
     ramload->attachAxis(axisY);
     cpuload->attachAxis(axisY);
-    QValueAxis* axisX = new QValueAxis;
+
+    axisX = new QValueAxis;
     axisX->setTitleText("time (s)");
     axisX->setMax(100);
     axisX->setMin(0);
@@ -48,6 +50,15 @@ LoadChart::LoadChart(QWidget *parent) :
 LoadChart::~LoadChart()
 {
     delete ui;
+    delete chart;
+    delete chartview;
+    delete cpuloader;
+    delete cpuload;
+    delete ramloader;
+    delete ramload;
+    delete updateTimer;
+    delete axisX;
+    delete axisY;
 }
 
 void LoadChart::updateChart()

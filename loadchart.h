@@ -29,6 +29,8 @@ private:
     CPULoader* cpuloader;
     RAMLoader* ramloader;
     QTimer* updateTimer;
+    QValueAxis* axisY;
+    QValueAxis* axisX;
     int cpt;
 };
 
