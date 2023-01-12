@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui location quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets charts
 
@@ -14,6 +14,7 @@ SOURCES += \
     loadchart.cpp \
     main.cpp \
     mainwindow.cpp \
+    mapwidget.cpp \
     ramloader.cpp \
     user.cpp
 
@@ -22,12 +23,14 @@ HEADERS += \
     cpuloader.h \
     loadchart.h \
     mainwindow.h \
+    mapwidget.h \
     ramloader.h \
     user.h
 
 FORMS += \
     loadchart.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    mapwidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

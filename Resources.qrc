@@ -3,4 +3,7 @@
         <file>image/in (1).png</file>
         <file>image/place-flying-in-sunset-sky.jpg</file>
     </qresource>
+    <qresource prefix="/">
+        <file>map.qml</file>
+    </qresource>
 </RCC>
