@@ -5,17 +5,17 @@
 #include <QFile>
 #include <QDebug>
 
-class PlanePath
+class PlanePosition
 {
 public:
-    PlanePath(QString, int, int, float, float, float);
+    PlanePosition(QString, int, int, float, float, float);
     QString getPlaneName();
     int getHour();
     int getMinute();
     float getLatitude();
     float getLongitude();
     float getAltitude();
-    static bool getPaths(std::vector<PlanePath*>*);
+    static bool getPositions(std::vector<PlanePosition*>*);
 private:
     QString planeName;
     int hour;
