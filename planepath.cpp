@@ -27,3 +27,20 @@ float PlanePath::getLongitude(){
 float PlanePath::getAltitude(){
     return altitude;
 }
+
+bool PlanePath::getPaths(std::vector<PlanePath*> *paths){
+    *paths = std::vector<PlanePath*>();
+
+    QFile file(":/data/Vol.csv");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        return false;
+    }
+    QTextStream in(&file);
+    qDebug() << in.readLine();
+    while(!in.atEnd()){
+        QString line = in.readLine();
+        QStringList lines = line.split(',');
+        paths->push_back(new PlanePath(lines[0], lines[1].toInt(), lines[2].toInt(), lines[3].toFloat(), lines[4].toFloat(), lines[5].toFloat()));
+    }
+    return true;
+}

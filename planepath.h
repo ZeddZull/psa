@@ -1,6 +1,9 @@
 #ifndef PLANEPATH_H
 #define PLANEPATH_H
 #include <QString>
+#include <vector>
+#include <QFile>
+#include <QDebug>
 
 class PlanePath
 {
@@ -12,6 +15,7 @@ public:
     float getLatitude();
     float getLongitude();
     float getAltitude();
+    static bool getPaths(std::vector<PlanePath*>*);
 private:
     QString planeName;
     int hour;

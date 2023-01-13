@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mapwidget.cpp \
+    planepath.cpp \
     ramloader.cpp \
     user.cpp
 
@@ -24,6 +25,7 @@ HEADERS += \
     loadchart.h \
     mainwindow.h \
     mapwidget.h \
+    planepath.h \
     ramloader.h \
     user.h
 

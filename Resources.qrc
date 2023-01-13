@@ -5,5 +5,7 @@
     </qresource>
     <qresource prefix="/">
         <file>map.qml</file>
+        <file>data/Vol.csv</file>
     </qresource>
+    <qresource prefix="/data"/>
 </RCC>
