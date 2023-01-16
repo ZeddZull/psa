@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QQuickView>
+#include "flight.h"
+#include <QQmlContext>
 
 namespace Ui {
 class MapWidget;
@@ -14,12 +16,14 @@ class MapWidget : public QWidget
 
 public:
     explicit MapWidget(QWidget *parent = nullptr);
+    Flight* getFlight();
     ~MapWidget();
 
 private:
     Ui::MapWidget *ui;
     QQuickView* view;
     QWidget* container;
+    Flight* flight;
 };
 
 #endif // MAPWIDGET_H

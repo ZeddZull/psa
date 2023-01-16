@@ -11,6 +11,8 @@ CONFIG += c++17
 SOURCES += \
     authoriseduser.cpp \
     cpuloader.cpp \
+    dashboardwindow.cpp \
+    flight.cpp \
     loadchart.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,6 +24,8 @@ SOURCES += \
 HEADERS += \
     authoriseduser.h \
     cpuloader.h \
+    dashboardwindow.h \
+    flight.h \
     loadchart.h \
     mainwindow.h \
     mapwidget.h \
@@ -30,6 +34,7 @@ HEADERS += \
     user.h
 
 FORMS += \
+    dashboardwindow.ui \
     loadchart.ui \
     mainwindow.ui \
     mapwidget.ui

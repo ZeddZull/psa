@@ -3,7 +3,8 @@
 #include <QString>
 #include <vector>
 #include <QFile>
-#include <QDebug>
+#include <QVector>
+#include <QTextStream>
 
 class PlanePosition
 {
@@ -15,7 +16,7 @@ public:
     float getLatitude();
     float getLongitude();
     float getAltitude();
-    static bool getPositions(std::vector<PlanePosition*>*);
+    static bool getPositions(QVector<PlanePosition*>*);
 private:
     QString planeName;
     int hour;

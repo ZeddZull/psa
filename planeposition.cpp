@@ -28,15 +28,15 @@ float PlanePosition::getAltitude(){
     return altitude;
 }
 
-bool PlanePosition::getPositions(std::vector<PlanePosition*> *paths){
-    *paths = std::vector<PlanePosition*>();
+bool PlanePosition::getPositions(QVector<PlanePosition*> *paths){
+    *paths = QVector<PlanePosition*>();
 
     QFile file(":/data/Vol.csv");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
         return false;
     }
     QTextStream in(&file);
-    qDebug() << in.readLine();
+    in.readLine();
     while(!in.atEnd()){
         QString line = in.readLine();
         QStringList lines = line.split(',');
