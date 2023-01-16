@@ -21,7 +21,7 @@ Item {
         zoomLevel: 6
         MapPolyline{
             id: flight_view
-            line.width: 3
+            line.width: 2
             line.color: 'green'
             path:[
                 {latitude: 43.0962276, longitude: 6.1498611},
