@@ -6,6 +6,7 @@
 #include <QThread>
 #include "user.h"
 #include "authoriseduser.h"
+#include "dashboardwindow.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals:
+    void showSecondWindow();
+
 private slots:
     void on_ButtonLogin_clicked();
 
@@ -28,6 +32,7 @@ private:
     User *user;
     AuthorisedUser authorised_User = AuthorisedUser();
     int number_of_tries;
+    DashboardWindow *dashboardWindow;
 };
 
 #endif // MAINWINDOW_H
