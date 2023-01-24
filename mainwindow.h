@@ -7,7 +7,10 @@
 #include "user.h"
 #include "authoriseduser.h"
 #include "dashboardwindow.h"
-
+#include <QtMultimedia>
+#include <QtMultimediaWidgets>
+#include <QQuickView>
+#include <QMediaPlayer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,6 +36,11 @@ private:
     AuthorisedUser authorised_User = AuthorisedUser();
     int number_of_tries;
     DashboardWindow *dashboardWindow;
+
+    /*QQuickView* view;
+    QWidget* container;
+    QMediaPlayer player;
+    QVideoWidget *videoWidget = new QVideoWidget();*/
 };
 
 #endif // MAINWINDOW_H

@@ -10,6 +10,17 @@ MainWindow::MainWindow(QWidget *parent)
     number_of_tries = 0;
     dashboardWindow = new DashboardWindow();
     connect(this, &MainWindow::showSecondWindow, dashboardWindow, &DashboardWindow::show);
+    ui->lineEditPassword->setEchoMode(QLineEdit::Password); // masque le contenu du LineEdit
+    ui->lineEditUsername->setStyleSheet("border: 1px solid black");
+    ui->lineEditPassword->setStyleSheet("border: 1px solid black");
+    ui->ButtonLogin->setStyleSheet("border: 1px solid black");
+    ui->ButtonLogin->setStyleSheet("background-color: blue light;");
+    ui->ButtonLogin->setIcon(QIcon(":/data_images/image/in.png"));
+    /*player.setVideoOutput(videoWidget);
+    videoWidget->show();
+    player.setSource(QUrl("qrc:/data_images/image/sky.mp4"));
+    player.play();*/
+    //ui->horizontalLayout_video->addWidget(videoWidget);
 }
 
 MainWindow::~MainWindow()
@@ -41,7 +52,6 @@ void MainWindow::on_ButtonLogin_clicked()
             //QMessageBox::information(this,"Password","Username and Password is Correct !");
             number_of_tries = 0;
             emit showSecondWindow();
-            return;
             }
 
         if (!authentification){

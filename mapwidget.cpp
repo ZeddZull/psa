@@ -9,8 +9,7 @@ MapWidget::MapWidget(QWidget *parent) :
     flight = new Flight();
     view = new QQuickView();
     container = QWidget::createWindowContainer(view, this);
-    container->setMinimumSize(512,512);
-    container->setMaximumSize(512,512);
+    container->setMinimumSize(1080,580);
     qRegisterMetaType<Flight>();
     qmlRegisterType<Flight>("Flight", 1, 0, "Flight");
     view->rootContext()->setContextProperty("flight", flight);

@@ -1,7 +1,13 @@
 <RCC>
     <qresource prefix="/data_images">
-        <file>image/in (1).png</file>
         <file>image/place-flying-in-sunset-sky.jpg</file>
+        <file>image/abstract-smooth-dark-blue-with-black-vignette-studio-well-use-as-background-business-report-digital-website-template-backdrop.jpg</file>
+        <file>image/sky.mp4</file>
+        <file>image/sky.gif</file>
+        <file>image/clear-air-fly-fantastic-travel.jpg</file>
+        <file>image/in.png</file>
+        <file>image/cloud-in-blue-sky.jpg</file>
+        <file>image/marker.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>map.qml</file>

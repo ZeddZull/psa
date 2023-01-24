@@ -9,7 +9,7 @@ DashboardWindow::DashboardWindow(QWidget *parent) :
     planePaths = QMap<QString,QVector<PlanePosition*>>();
     QVector<PlanePosition*> planePositions;
     PlanePosition::getPositions(&planePositions);
-    for (int i; i < planePositions.size(); i++){
+    for (int i = 0; i < planePositions.size(); i++){
         QString name = planePositions[i]->getPlaneName();
         if (!planePaths.contains(name)){
             planePaths[name] = QVector<PlanePosition*>();

@@ -5,14 +5,27 @@ import QtPositioning 5.5
 import Flight 1.0
 
 Item {
-    width: 512
-    height: 512
+    width: 1080
+    height: 580
     visible: true
 
     Plugin {
         id: mapPlugin
         name: "osm"
     }
+
+    ListModel {
+            id: locationModel
+            ListElement {lat: 43.0962276; lon: 6.1498611; color: "red"; radius:5000}
+            ListElement {lat: 42.5546214; lon: 9.4822981; color: "red"; radius:5000}
+            ListElement {lat: 43.4375586; lon: 5.2135912; color: "red"; radius:5000}
+            ListElement {lat: 43.6299473; lon: 1.3637499; color: "red"; radius:5000}
+            ListElement {lat: 43.3791392; lon: -0.4201974; color: "red"; radius:5000}
+            ListElement {lat: 45.7245281; lon: 5.0873268; color: "red"; radius:5000}
+            ListElement {lat: 43.5798377; lon: 3.9664417; color: "red"; radius:5000}
+            ListElement {lat: 43.6597926; lon: 7.2150735; color: "red"; radius:5000}
+            ListElement {lat: 43.4691926; lon: -1.5231207; color: "red"; radius:5000}
+        }
 
     Map{
         id: map
@@ -27,12 +40,7 @@ Item {
             id: flight_view
             line.width: 2
             line.color: 'green'
-            path:[
-                {latitude: 43.0962276, longitude: 6.1498611},
-                {latitude: 43.05754144285714, longitude: 6.387892314285714},
-                {latitude: 43.01885528571429, longitude: 6.625923528571429},
-                {latitude: 42.980169128571426, longitude: 6.863954742857143}
-            ]
+            path:[]
             Connections{
                 target: flight
                 onTriggerClearPath: flight_view.setPath([])
@@ -40,12 +48,42 @@ Item {
             }
         }
 
-        MapCircle {
+        MapItemView {
+                    model: locationModel
+
+                    delegate: MapCircle {
+                        center: QtPositioning.coordinate(lat, lon) // lat et lon depuis le modele
+                        radius: model.radius
+                        opacity: 1
+                        color: model.color
+                        border.color: model.color
+                    }
+                }
+
+        /*MapItemView {
+                    model: locationModel
+
+                    delegate: MapQuickItem {
+                        coordinate: QtPositioning.coordinate(lat, lon)
+                        anchorPoint: Qt.point(10,30) // les coordonnées locale de l'icon a centées sur les coordonnées géographique
+
+                        sourceItem: Image {
+                            source: "qrc:/data_images/images/marker.jpg"
+                            height: 30
+                            width: 20
+                        }
+                    }
+                }*/
+    }
+}
+
+        /*MapCircle {
                         center: QtPositioning.coordinate(43.0962276,6.1498611)
                         radius: 5000.0
                         color: 'red'
                         border.width: 1
                     }
+
         MapCircle {
                         center: QtPositioning.coordinate(42.5546214,9.4822981)
                         radius: 5000.0
@@ -95,8 +133,7 @@ Item {
                         border.width: 1
                     }
 
-        }
-}
+        }*/
 
 /*Component.onCompleted: {
         var textObject = map.
