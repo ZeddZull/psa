@@ -16,11 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->ButtonLogin->setStyleSheet("border: 1px solid black");
     ui->ButtonLogin->setStyleSheet("background-color: blue light;");
     ui->ButtonLogin->setIcon(QIcon(":/data_images/image/in.png"));
-    /*player.setVideoOutput(videoWidget);
-    videoWidget->show();
-    player.setSource(QUrl("qrc:/data_images/image/sky.mp4"));
-    player.play();*/
-    //ui->horizontalLayout_video->addWidget(videoWidget);
+    MainWindow::setWindowTitle("Login");
 }
 
 MainWindow::~MainWindow()
@@ -45,18 +41,19 @@ void MainWindow::on_ButtonLogin_clicked()
 
     user = new User(username,password);
     bool authentification = authorised_User.isAuthorise(user);
+    int remaining_tries = 3 - number_of_tries;
 
-    if(number_of_tries <5)
+    if(number_of_tries <3)
     {
         if (authentification){
-            //QMessageBox::information(this,"Password","Username and Password is Correct !");
             number_of_tries = 0;
             emit showSecondWindow();
+            emit MainWindow::close();
             }
 
         if (!authentification){
             ++number_of_tries;
-            QMessageBox::information(this,"Password","Username and/or Password is not Correct !");
+            QMessageBox::information(this,"Password","Username and/or Password is not Correct !\nRemaining Tries : " + QString::number(remaining_tries));
             return;
         }
     }

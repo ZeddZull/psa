@@ -40,7 +40,7 @@ LoadChart::LoadChart(QWidget *parent) :
 
     chartview = new QChartView(chart);
 
-    chartview->setMinimumSize(1200,400);
+    chartview->setMinimumSize(650,250);
     ui->verticalLayout->addWidget(chartview);
 
     updateTimer = new QTimer(this);

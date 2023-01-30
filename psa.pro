@@ -8,32 +8,43 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    airportwindow.cpp \
     authoriseduser.cpp \
     cpuloader.cpp \
     dashboardwindow.cpp \
     flight.cpp \
+    flightwindow.cpp \
     loadchart.cpp \
     main.cpp \
     mainwindow.cpp \
     mapwidget.cpp \
     planeposition.cpp \
     ramloader.cpp \
-    user.cpp
+    user.cpp \
+    airport.cpp \
+    mapmodel.cpp
 
 HEADERS += \
+    airportwindow.h \
     authoriseduser.h \
     cpuloader.h \
     dashboardwindow.h \
     flight.h \
+    flightwindow.h \
     loadchart.h \
     mainwindow.h \
     mapwidget.h \
     planeposition.h \
     ramloader.h \
-    user.h
+    user.h \
+    airport.h \
+    mapmodel.h
+
 
 FORMS += \
+    airportwindow.ui \
     dashboardwindow.ui \
+    flightwindow.ui \
     loadchart.ui \
     mainwindow.ui \
     mapwidget.ui

@@ -36,11 +36,6 @@ private:
     AuthorisedUser authorised_User = AuthorisedUser();
     int number_of_tries;
     DashboardWindow *dashboardWindow;
-
-    /*QQuickView* view;
-    QWidget* container;
-    QMediaPlayer player;
-    QVideoWidget *videoWidget = new QVideoWidget();*/
 };
 
 #endif // MAINWINDOW_H

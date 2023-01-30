@@ -8,10 +8,22 @@
         <file>image/in.png</file>
         <file>image/cloud-in-blue-sky.jpg</file>
         <file>image/marker.jpg</file>
+        <file>image/Black.jpg</file>
+        <file>image/plane.png</file>
+        <file>image/pause.png</file>
+        <file>image/play-button.png</file>
+        <file>image/rewind.png</file>
+        <file>image/right-arrow.png</file>
+        <file>image/user.png</file>
+        <file>image/backgroundgradient.jpg</file>
+        <file>image/airplane-flying-over-skyscrapers.jpg</file>
+        <file>image/vivid-blurred-colorful-wallpaper-background.jpg</file>
+        <file>image/Playback.png</file>
     </qresource>
     <qresource prefix="/">
         <file>map.qml</file>
         <file>data/Vol.csv</file>
+        <file>Airports.csv</file>
     </qresource>
     <qresource prefix="/data"/>
 </RCC>
